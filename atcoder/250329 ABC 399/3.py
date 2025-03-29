@@ -1,43 +1,39 @@
 #基本操作
 import sys
 input = sys.stdin.readline
-from collections import defaultdict
+from collections import deque
+import bisect
+import heapq
+import math
+import copy
 
-dx = [1]
-tc = int(input())
+#input 
+n, m = map(int, input().split())
+line = [[] for _ in range(n + 1)]
 
-for _ in range(tc):
-    ans = 0
+ans = 0
+wentlst = [False] * (n + 1)
 
+q = deque([])
 
-    n = int(input())
-    dic = defaultdict(list)
-    lst = list(map(int, input().split()))
-    ban_list = []
-    for i  in range(2 * n):
-        now = lst[i]
-        piv = [i - 1, i + 1]
-        for j in piv:
-            if 0 <=  j < 2 * n:
-                pivv = lst[j]
-                if now == pivv:
-                    ban_list.append(now)
+lst = set()
+for i in range(m):
+    a, b = map(int, input().split())
+    line[a].append(b)
+    line[b].append(a)
+    lst.add(a)
+    lst.add(b)
 
-
-
-    for i in range(2 * n):
-        now = lst[i]
-        piv = [i - 1, i + 1]
-        for j in piv:
-            if 0 <=  j < 2 * n:
-                pivv = lst[j]
-
-                if pivv in dic[now]:
-                    if pivv in ban_list or now in ban_list:
-                        continue
-                    ans += 1
-                    continue
-                dic[now].append(pivv)
+lst = deque(lst)
 
 
-    print(ans // 2)
+while lst:
+    now = lst.pop()
+    wentlst[now] = True
+    for i in line[now]:
+        if not wentlst[i]:
+            wentlst[i] = True
+            ans += 1
+            lst.append(i)
+
+print(m - ans)
