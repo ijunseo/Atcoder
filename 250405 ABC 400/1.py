@@ -1,3 +1,4 @@
+
 #基本操作
 import sys
 input = sys.stdin.readline

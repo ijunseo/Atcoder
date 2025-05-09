@@ -58,4 +58,3 @@ while True:
                 else:
                     continue
     for i in newlst:
-        lst[i[0]][i[1]] = '.'

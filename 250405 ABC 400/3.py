@@ -21,4 +21,3 @@ for i in range(1, n_1 + 1):
 
 
 #solve 
-
