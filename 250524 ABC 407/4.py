@@ -5,7 +5,7 @@ input = sys.stdin.readline
 #input 
 h, w = map(int, input().split())
 
-lst = [[[0 for _ in range(31)] for _ in range(w)] for _ in range(h)]
+lst = [[[0 for _ in range(61)] for _ in range(w)] for _ in range(h)]
 
 for i in range(h):
     llst = list(map(int, input().split()))
@@ -16,7 +16,7 @@ for i in range(h):
             nnow = now[- k - 1]
             lst[i][j][k] = int(nnow)
 
-ans_lst = [0 for _ in range(31)]
+ans_lst = [0 for _ in range(61)]
 
 for i in range(h):
     for j in range(w):
@@ -30,11 +30,11 @@ def calc(dots:list):
     for i in dots:
         r = i[0]
         c = i[1]
-        for j in range(31):
+        for j in range(61):
             if lst[r][c][j]:
                 nowdots[j] -= 1
     a = 0
-    for i in range(31):
+    for i in range(61):
         if nowdots[i] % 2:
             a += 2 ** i
     return a
