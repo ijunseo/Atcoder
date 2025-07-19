@@ -1,0 +1,1 @@
+{"name":"Local: 3","url":"c:\\Users\\dlwns\\2025git\\Atcoder\\250719 ABC 415\\3.py","tests":[{"id":1752923798237,"input":"5\n3\n0010000\n3\n0010110\n1\n1\n2\n100\n4\n001110010101110\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dlwns\\2025git\\Atcoder\\250719 ABC 415\\3.py","group":"local","local":true}
