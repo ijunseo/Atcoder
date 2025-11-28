@@ -147,8 +147,9 @@ class lasyseg:
 
 #input 
 n = int(input())
-
+a, b = map(int, input().split())
 lst = list(map(int, input().split()))
+
 lst.sort()
 s = set(lst)
 
